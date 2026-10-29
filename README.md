@@ -26,7 +26,7 @@ Convert the design to HTML and CSS using a CSS framework of choice (through a CD
 
 ## How to View
 
-Live: https://wesley-dev-tech.github.io/Griezelnacht_exam/
+Live: https://wesley-dev-tech.github.io/Examen_Griezelnacht/
 
 Or download the files and open `index.html` in a browser. No installation or build step is required. An internet connection is needed to load Bootstrap and Google Fonts.
 
