@@ -1,0 +1,479 @@
+/* VARIABELEN */
+
+:root {
+  --color-bg: #0d0a14;
+  --color-orange: #ff7519;
+  --color-orange-light: #ffbc59;
+  --color-gold: #fec15e;
+  --color-cream: #f1e7d6;
+  --color-text-muted: #ab9fc2;
+  --color-border: rgba(255, 255, 255, 0.13);
+
+  --font-display: "Pirata One", serif;
+  --font-mono: "Special Elite", monospace;
+  --font-body: "Figtree", sans-serif;
+}
+
+/* ALGEMEEN */
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+}
+
+/* Reset standaard browserstijlen voor lijsten in de navigatie, hero en de footer */
+
+.nav-list,
+.hero-facts,
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Gotische titels */
+
+.brand-name,
+.hero-title,
+.newsletter-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Gouden typemachinetekst */
+
+.hero-eyebrow,
+.footer-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+/* KNOPPEN */
+
+.button {
+  display: inline-flex;
+  padding: 14px 25px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.button-primary {
+  background-color: var(--color-orange);
+  color: var(--color-bg);
+  box-shadow: 0 0 24px rgba(255, 117, 25, 0.45);
+}
+
+.button-outline {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: inherit;
+}
+
+.button-dark {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+}
+
+.button-small {
+  padding: 11px 20px;
+  font-size: 0.9rem;
+}
+
+/* HOVER */
+
+.button-primary:hover { background-color: var(--color-orange-light); }
+
+.button-outline:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.button-dark:hover,
+.nav-list button:hover,
+.footer-list li:hover {
+  color: var(--color-orange);
+}
+
+/* LOGO POMPOEN HEADER */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-icon { width: 32px; }
+
+/* Naam en ondertitel onder elkaar */
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  font-size: 1.7rem;
+  color: var(--color-cream);
+}
+
+.brand-tagline {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+/* HEADER */
+
+.site-header {
+  padding-block: 15px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-list {
+  display: flex;
+  gap: 36px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* Nav-buttons */
+
+.nav-list button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+
+/* HERO */
+
+/* Paarse gloed rechtsboven die naar de randen donker wordt */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  background: radial-gradient(80% 85% at 80% 30%, #2e1f4c 30%, #141020);
+}
+
+/* Nevel onderaan */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background: linear-gradient(to top, rgba(190, 175, 225, 0.14), transparent);
+}
+
+.hero-container { position: relative; }
+
+.hero-content {
+  padding-top: 82px;
+  padding-bottom: 60px;
+}
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.hero-title {
+  margin-bottom: 23px;
+  font-size: 10.25rem;
+  line-height: 0.83;
+}
+
+/* Elk woord in de titel krijgt een eigen regel: elk span-element wordt als block-element weergegeven. */
+
+.hero-title span { display: block; }
+
+/* Gloed rond de letters */
+
+.hero-title-light { text-shadow: 0 0 28px rgba(241, 231, 214, 0.35); }
+
+.hero-title-accent {
+  color: var(--color-orange);
+  text-shadow: 0 0 30px rgba(255, 117, 25, 0.7);
+}
+
+.hero-intro {
+  max-width: 600px;
+  margin-bottom: 26px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* Knoppen en kolommen naast elkaar */
+
+.hero-actions,
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-actions {
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+/* Compacte informatiekaart: toont een waarde boven de bijbehorende label/omschrijving in een afgeronde, visueel gescheiden box. */
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 17px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+}
+
+.fact-value {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.fact-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* AFBEELDINGEN */
+
+/* Vak waarin de afbeeldingen vrij geplaatst worden */
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  max-width: 372px;
+  aspect-ratio: 1 / 2;
+  margin: 0;
+}
+
+.twig,
+.bat,
+.moon,
+.hero-ghost,
+.pumpkin,
+.castle,
+.twig-left,
+.twig-right,
+.bat-top,
+.bat-right,
+.bat-middle {
+  position: absolute;
+}
+
+.twig {
+  bottom: -2px;
+  width: 70px;
+}
+
+.twig-left  { left: 4.3%; }
+.twig-right { left: 43.3%; }
+
+/* Gloed rond de maan */
+
+.moon {
+  top: 4.7%;
+  left: 3%;
+  width: 88%;
+  filter: drop-shadow(0 0 40px rgba(246, 238, 201, 0.35));
+}
+
+.hero-ghost,
+.pumpkin,
+.castle {
+  position: absolute;
+}
+
+.hero-ghost { top: 21%; left: 67%; width: 31%; }
+.pumpkin    { top: 43.4%; left: 5.5%; width: 70%; }
+.castle     { bottom: -4px; left: 8.2%; width: 83%; }
+
+.bat,
+.bat-top,
+.bat-right,
+.bat-middle {
+  position: absolute;
+}
+
+.bat        { width: 34px; }
+.bat-top    { top: 38px; left: 44%; width: 28px; }
+.bat-right  { top: 20%; left: 94%; }
+.bat-middle { top: 28%; left: 58.6%; }
+
+/* Schaduw onder de pompoen: wazige ovaal */
+
+.hero-art::before {
+  content: "";
+  position: absolute;
+  top: 76%;
+  left: 10%;
+  width: 57%;
+  height: 3.5%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.45);
+  filter: blur(4px);
+}
+
+/* NIEUWSBRIEF */
+
+.newsletter {
+  padding-top: 45px;
+  padding-bottom: 117px;
+}
+
+.newsletter-card {
+  padding: 30px 45px 30px 60px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, var(--color-orange), var(--color-orange-light));
+  color: var(--color-bg);
+}
+
+/* Spookje */
+
+.newsletter-ghost {
+  position: relative;
+  top: -22px;
+  width: 97px;
+  height: 135px;
+}
+
+.newsletter-title {
+  margin-bottom: 6px;
+  font-size: 2.9rem;
+  line-height: 1.1;
+}
+
+.newsletter-text {
+  max-width: 400px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* E-mailveld en knop naast elkaar */
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+}
+
+.newsletter-input {
+  width: 290px;
+  padding: 12px 22px;
+  border: 1px solid var(--color-bg);
+  border-radius: 999px;
+  background-color: var(--color-cream);
+}
+
+/* FOOTER */
+
+.site-footer {
+  padding-top: 70px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.footer-address {
+  margin: 18px 0 0;
+  line-height: 1.625;
+}
+
+.footer-title {
+  margin-bottom: 21px;
+  font-size: 0.82rem;
+}
+
+/* Items onder elkaar */
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Copyright staat links, slogan staat rechts */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 56px -24px 0;
+  padding: 20px 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVE MOBIELE TOESTELLEN */
+
+@media (max-width: 767.98px) {
+  /* Menu op een eigen rij */
+  .main-nav {
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-list {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-content {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    text-align: center;
+  }
+
+  .hero-title { font-size: 5.5rem; }
+
+  .hero-intro {
+    margin-inline: auto;
+    font-size: 1rem;
+  }
+
+  .hero-actions,
+  .hero-facts { justify-content: center; }
+
+  .hero-art { max-width: 240px; }
+
+  .newsletter-card {
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .newsletter-title { font-size: 2.3rem; }
+  .newsletter-text { margin-inline: auto; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-input { width: 100%; }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
