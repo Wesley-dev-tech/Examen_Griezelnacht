@@ -1,4 +1,4 @@
-# Griezelnacht Exam
+# Examen Griezelnacht
 
 My exam for the Fundamentals & tooling module during my developer training: a landing page for Griezelnacht, a fictional Halloween night at Kasteel Ravenhoek, rebuilt from a given design with HTML, CSS and Bootstrap.
 
